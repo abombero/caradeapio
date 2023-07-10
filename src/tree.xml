@@ -1,0 +1,13 @@
+<Router>
+  <MainLayout>
+    <Header>
+    </ Header>
+
+    <PageContainer>
+      {children}
+    </ PageContainer>
+
+    <Footer>
+    </ Footer>
+  </ MainLayout>
+</ Router>
