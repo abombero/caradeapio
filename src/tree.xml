@@ -11,3 +11,17 @@
     </ Footer>
   </ MainLayout>
 </ Router>
+
+
+<Contacto>
+  <Forms>
+    <SectionTitle>
+    <ContactInput>
+    <ContactInput>
+    <ContactInput>
+    <BtnForm>
+  <Forms />
+<Contacto/>
+
+
+

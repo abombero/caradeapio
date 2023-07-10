@@ -1,3 +1,7 @@
 export function Footer() {
-  return <></>;
+  return (
+    <footer>
+      <p>STAY TUNE FOR MORE!</p>
+    </footer>
+  );
 }

@@ -1,85 +1,57 @@
-import bckgClouds from "../img/clouds-bckgnd.jpg";
 import imgContact from "../img/gorgory-contacto.jpg";
-import SectionTitle from "../section_title/SectionTitle";
+import Forms from "../Forms/Forms";
+import { FormInput } from "../Forms/FormInput";
 
 export default function Contacto() {
-  function handleContacto() {}
-
   return (
-    <section
-      id="contacto"
-      className="bckgnd__clouds"
-      style={{ backgroundImage: { bckgClouds } }}
+    <Forms
+      title="Contacto"
+      sectionId="contacto"
+      frmId="frmContacto"
+      frmImg={imgContact}
+      btnForm="ENVIAR"
     >
-      <SectionTitle title="Contacto" />
-      <div className="main-contact">
-        <form
-          id="frmContacto"
-          method="post"
-          action=""
-          onsubmit="enviarFormulario(event)"
-        >
-          <ContactInput
-            id="nombre"
-            label="Nombre"
-            textType="text"
-            className="nombre display"
-            pTexto="Nombre incorrecto"
-          />
+      <FormInput
+        id="nombre"
+        label="Nombre"
+        textType="text"
+        className="nombre display"
+        pTexto="Nombre incorrecto"
+      />
 
-          <ContactInput
-            id="apellido"
-            label="Apellido"
-            textType="text"
-            className="apellido display"
-            pTexto="Apellido incorrecto"
-          />
+      <FormInput
+        id="apellido"
+        label="Apellido"
+        textType="text"
+        className="apellido display"
+        pTexto="Apellido incorrecto"
+      />
 
-          <ContactInput
-            id="telefono"
-            label="Telefono"
-            textType="number"
-            className="telefono display"
-            pTexto="Numero incorrecto"
-          />
+      <FormInput
+        id="telefono"
+        label="Telefono"
+        textType="number"
+        className="telefono display"
+        pTexto="Numero incorrecto"
+      />
 
-          <ContactInput
-            id="email"
-            label="Email"
-            textType="nuemailmber"
-            className="email display"
-            pTexto="Email incorrecto"
-          />
+      <FormInput
+        id="email"
+        label="Email"
+        textType="nuemailmber"
+        className="email display"
+        pTexto="Email incorrecto"
+      />
 
-          <ContactInput
-            id="comentarios"
-            label="Comentarios"
-            textType="nuemailmber"
-            className="comentarios display"
-            pTexto="Max 150 caracteres"
-          />
-
-          <button onClick={handleContacto}>ENVIAR</button>
-        </form>
-
-        <ContactImg />
-      </div>
-    </section>
+      <FormInput
+        id="comentarios"
+        label="Comentarios"
+        textType="nuemailmber"
+        className="comentarios display"
+        pTexto="Max 150 caracteres"
+      />
+    </Forms>
   );
-}
-
-function ContactInput({ label, textType, className, pTexto }) {
-  return (
-    <div>
-      <label>{label}</label>
-      <input type={textType}></input>
-      <p className={className}>{pTexto}</p>
-    </div>
-  );
-}
-
-function ContactImg() {
-  return <img src={imgContact} alt={imgContact} />;
 }
 
 {

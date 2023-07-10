@@ -1,9 +1,9 @@
 export function LinksNavBar() {
   const links = [
-    { solapa: "Inicio", href: "index.html" },
-    { solapa: "Contacto", href: "contacto.html" },
-    { solapa: "Nosotros", href: "nosotros.html" },
-    { solapa: "Alta", href: "alta.html" },
+    { solapa: "Inicio", href: "/" },
+    { solapa: "Contacto", href: "/contacto" },
+    { solapa: "Nosotros", href: "/nosotros" },
+    { solapa: "Alta", href: "/alta" },
   ];
 
   return (

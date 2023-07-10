@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 import { Home } from "./Inicio/Home";
 import Header from "./header/Header";
 import Contacto from "./contacto/Contacto";
+import Alta from "./alta/Alta";
 
 export default function App() {
   return (
@@ -14,8 +15,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contacto" element={<Contacto />} />
-          {/* <Route path="/Nosotros" element={<Nosotros />} />
-          <Route path="/Alta" element={<Alta />} /> */}
+          {/* <Route path="/Nosotros" element={<Nosotros />} /> */}
+          <Route path="/alta" element={<Alta />} />
         </Routes>
       </Router>
       <Footer />
