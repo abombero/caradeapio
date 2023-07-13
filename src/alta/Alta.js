@@ -1,7 +1,7 @@
-import { useState } from "react";
 import imgAlta from "../img/alta_img.jpg";
 import bckgClouds from "../img/clouds-bckgnd.jpg";
 import SectionTitle from "../section_title/SectionTitle";
+import { useEffect } from "react";
 
 export default function Alta({
   collections,
@@ -9,6 +9,7 @@ export default function Alta({
   figureAlta,
   setFigureAlta,
   collectionAlta,
+  setCollectionAlta,
   priceAlta,
   setPriceAlta,
   imagenAlta,
@@ -18,29 +19,29 @@ export default function Alta({
   newFigures,
   setNewFigures,
 }) {
-  // const [figureAlta, setFigureAlta] = useState("");
-  // const [collectionAlta, setCollectionAlta] = useState("");
-  // const [priceAlta, setPriceAlta] = useState("");
-  // const [imagenAlta, setImagenAlta] = useState("");
-  // const [descrpitionAlta, setDescriptionAlta] = useState("");
-
-  // const [newFigures, setNewFigures] = useState(figures);
-
-  console.log(newFigures);
-
+  // LOCAL STORAGE
   function handleAlta(e) {
     e.preventDefault();
-    setNewFigures([
-      ...figures,
-      {
-        collection: collectionAlta,
-        figure: figureAlta,
-        description: descrpitionAlta,
-        price: priceAlta,
-        img: imgAlta,
-      },
-    ]);
-    console.log(newFigures);
+
+    const newFigure = {
+      collection: collectionAlta,
+      figure: figureAlta,
+      description: descrpitionAlta,
+      price: parseInt(priceAlta),
+      img: imagenAlta,
+    };
+
+    const updatedFigures = [...newFigures, newFigure];
+    setNewFigures(updatedFigures);
+
+    localStorage.setItem("figures", JSON.stringify(updatedFigures));
+
+    // Limpiar los valores del formulario
+    setFigureAlta("");
+    setCollectionAlta("");
+    setPriceAlta("");
+    setImagenAlta("");
+    setDescriptionAlta("");
   }
 
   return (
@@ -64,22 +65,13 @@ export default function Alta({
 
           <div>
             <label htmlFor="collection">Coleccion</label>
-            <select>
+            <select onChange={(e) => setCollectionAlta(e.target.value)}>
               {collections.map((el) => (
-                <option
-                  value={(collectionAlta = el.collection)}
-                  key={el.collection}
-                >
+                <option value={el.id} key={el.id}>
                   {el.collection}
                 </option>
               ))}
             </select>
-            {/* <input
-              type="text"
-              id="collection"
-              value={collectionAlta}
-              onChange={(e) => setCollectionAlta(e.target.value)}
-            /> */}
           </div>
 
           <div>
@@ -118,7 +110,11 @@ export default function Alta({
           <button>ENVIAR</button>
         </form>
 
-        <img src={imgAlta} alt={imgAlta} />
+        <img
+          onClick={() => console.log(newFigures)}
+          src={imgAlta}
+          alt={imgAlta}
+        />
       </div>
     </section>
   );

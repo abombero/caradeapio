@@ -112,6 +112,7 @@ export default function App() {
                 imagenAlta={imagenAlta}
                 setImagenAlta={setImagenAlta}
                 collectionAlta={collectionAlta}
+                setCollectionAlta={setCollectionAlta}
                 descrpitionAlta={descrpitionAlta}
                 setDescriptionAlta={setDescriptionAlta}
                 newFigures={newFigures}

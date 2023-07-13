@@ -1,5 +1,4 @@
-export function Items({ fig }) {
-  console.log(fig);
+export function Items({ fig, newFigures }) {
   return (
     <>
       <div className="card">
@@ -12,7 +11,12 @@ export function Items({ fig }) {
               <h1 className="card__title">{fig.figure}</h1>
               <p className="card__description">{fig.description}</p>
               <p className="card__price">$ {fig.price}</p>
-              <button className="comprar">AGREGAR A CARRO</button>
+              <button
+                onClick={() => console.log(newFigures)}
+                className="comprar"
+              >
+                AGREGAR A CARRO
+              </button>
               <button className="eliminar display">ELIMINAR DE CARRO</button>
             </div>
           </div>

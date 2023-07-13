@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export function Cards({ colec, figures, newFigures }) {
   const [searchInput, setSearchInput] = useState("");
-  console.log(newFigures);
+
   newFigures.map((f) =>
     colec.map((c) => (c.id === f.collection ? (f.logo = c.logo) : ""))
   );
@@ -29,7 +29,11 @@ export function Cards({ colec, figures, newFigures }) {
         <section key={col.collection} id={col.id}>
           <img id="banner" src={col.banner} alt={col.banner} />
           {newFigures.map((f) =>
-            col.id === f.collection ? <Items key={f.figure} fig={f} /> : ""
+            col.id === f.collection ? (
+              <Items newFigures={newFigures} key={f.figure} fig={f} />
+            ) : (
+              ""
+            )
           )}
         </section>
       ))}
