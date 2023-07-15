@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 export default function Alta({
   collections,
-  figures,
   figureAlta,
   setFigureAlta,
   collectionAlta,
@@ -111,7 +110,7 @@ export default function Alta({
         </form>
 
         <img
-          onClick={() => console.log(newFigures)}
+          onClick={() => console.log(localStorage.getItem("figures"))}
           src={imgAlta}
           alt={imgAlta}
         />

@@ -79,8 +79,10 @@ export default function App() {
   const [carrito, setCarrito] = useState(0);
 
   // useEffect(() => {
-  //   setNewFigures();
-  // }, [newFigures]);
+  //   const a = localStorage.getItem("figures");
+  // }, []);
+
+  const allFigures = localStorage.getItem("figures");
 
   return (
     <>
@@ -94,6 +96,7 @@ export default function App() {
                 collections={collections}
                 figures={figures}
                 newFigures={newFigures}
+                allFigures={allFigures}
               />
             }
           />

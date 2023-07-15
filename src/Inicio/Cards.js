@@ -1,11 +1,11 @@
 import { Items } from "./Items";
 import { useState } from "react";
 
-export function Cards({ colec, figures, newFigures }) {
+export function Cards({ collections, figures, newFigures, allFigures }) {
   const [searchInput, setSearchInput] = useState("");
 
   newFigures.map((f) =>
-    colec.map((c) => (c.id === f.collection ? (f.logo = c.logo) : ""))
+    collections.map((c) => (c.id === f.collection ? (f.logo = c.logo) : ""))
   );
 
   const [inputText, setInputText] = useState("");
@@ -25,15 +25,11 @@ export function Cards({ colec, figures, newFigures }) {
       />
 
       <button>BUSCAR</button>
-      {colec.map((col) => (
+      {collections.map((col) => (
         <section key={col.collection} id={col.id}>
           <img id="banner" src={col.banner} alt={col.banner} />
-          {newFigures.map((f) =>
-            col.id === f.collection ? (
-              <Items newFigures={newFigures} key={f.figure} fig={f} />
-            ) : (
-              ""
-            )
+          {JSON.parse(allFigures).map((f) =>
+            col.id === f.collection ? <Items key={f.figure} fig={f} /> : ""
           )}
         </section>
       ))}

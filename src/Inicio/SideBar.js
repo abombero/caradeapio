@@ -1,11 +1,11 @@
-export function SideBar({ colec }) {
+export function SideBar({ collections }) {
   return (
     <div className="side-bar">
       <h3>COLLECTIONS</h3>
       <ul>
-        {colec.map((col) => (
-          <a key={col.id} href={col.href}>
-            <li>{col.collection}</li>
+        {collections.map((col) => (
+          <a key={collections.id} href={collections.href}>
+            <li>{collections.collection}</li>
           </a>
         ))}
       </ul>
