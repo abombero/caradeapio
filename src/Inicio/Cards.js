@@ -25,11 +25,16 @@ export function Cards({ collections, figures, newFigures, allFigures }) {
       />
 
       <button>BUSCAR</button>
-      {collections.map((col) => (
-        <section key={col.collection} id={col.id}>
-          <img id="banner" src={col.banner} alt={col.banner} />
-          {JSON.parse(allFigures).map((f) =>
-            col.id === f.collection ? <Items key={f.figure} fig={f} /> : ""
+      {collections.map((collections) => (
+        <section key={collections.collection} id={collections.id}>
+          <img id="banner" src={collections.banner} alt={collections.banner} />
+          {(JSON.parse(allFigures) ? JSON.parse(allFigures) : newFigures).map(
+            (f) =>
+              collections.id === f.collection ? (
+                <Items key={f.figure} fig={f} />
+              ) : (
+                ""
+              )
           )}
         </section>
       ))}

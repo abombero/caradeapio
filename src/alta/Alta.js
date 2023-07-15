@@ -17,6 +17,7 @@ export default function Alta({
   setDescriptionAlta,
   newFigures,
   setNewFigures,
+  allFigures,
 }) {
   // LOCAL STORAGE
   function handleAlta(e) {
@@ -31,6 +32,9 @@ export default function Alta({
     };
 
     const updatedFigures = [...newFigures, newFigure];
+    updatedFigures.map((f) =>
+      collections.map((c) => (c.id === f.collection ? (f.logo = c.logo) : ""))
+    );
     setNewFigures(updatedFigures);
 
     localStorage.setItem("figures", JSON.stringify(updatedFigures));

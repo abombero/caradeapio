@@ -106,7 +106,6 @@ export default function App() {
             path="/alta"
             element={
               <Alta
-                figures={figures}
                 collections={collections}
                 figureAlta={figureAlta}
                 setFigureAlta={setFigureAlta}
@@ -120,6 +119,7 @@ export default function App() {
                 setDescriptionAlta={setDescriptionAlta}
                 newFigures={newFigures}
                 setNewFigures={setNewFigures}
+                allFigures={allFigures}
               />
             }
           />
